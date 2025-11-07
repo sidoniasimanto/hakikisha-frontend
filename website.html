@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakikisha Insurance - Your Trusted Insurance Partner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #003366 0%, #0055a5 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #003366 0%, #0055a5 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background: white;
+            color: #003366;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            background: #f8f9fa;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #003366;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #003366;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .learn-more {
+            color: #0055a5;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        .learn-more:hover {
+            color: #003366;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-box {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0055a5;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            background: #f8f9fa;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #0055a5;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #003366 0%, #0055a5 100%);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Chat Button */
+        #chat-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0055a5 0%, #003366 100%);
+            border-radius: 50%;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,85,165,0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 1000;
+        }
+
+        #chat-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(0,85,165,0.6);
+        }
+
+        /* Chat Popup */
+        #chat-popup {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 380px;
+            max-height: 600px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            z-index: 1001;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        #chat-popup.active {
+            display: flex;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #chat-header {
+            background: linear-gradient(135deg, #003366 0%, #0055a5 100%);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #chat-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        #close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+        }
+
+        #chat-box {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            background: #f8f9fa;
+            max-height: 400px;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            animation: slideIn 0.3s;
+        }
+
+        .message-content {
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .user .message-content {
+            background: #0055a5;
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
+        }
+
+        .bot .message-content {
+            background: white;
+            color: #333;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .message-label {
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 0.3rem;
+        }
+
+        #chat-input-container {
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            font-size: 0.95rem;
+        }
+
+        #user-input:focus {
+            border-color: #0055a5;
+        }
+
+        #send-button {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #0055a5 0%, #003366 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        #send-button:hover {
+            transform: scale(1.05);
+        }
+
+        #loading {
+            text-align: center;
+            padding: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        #error {
+            text-align: center;
+            padding: 0.5rem;
+            color: #e74c3c;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        /* Service Detail Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            max-width: 700px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+            width: 40px;
+            height: 40px;
+        }
+
+        .modal-content h2 {
+            color: #003366;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .modal-content h3 {
+            color: #0055a5;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content li {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #chat-popup {
+                width: calc(100% - 2rem);
+                right: 1rem;
+                left: 1rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Hakikisha Insurance</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Protecting What Matters Most</h1>
+        <p>Comprehensive insurance solutions tailored for your peace of mind</p>
+        <a href="#services" class="cta-button">Explore Our Services</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">Our Insurance Services</h2>
+        <div class="services-grid">
+            <div class="service-card" onclick="showServiceDetail('life')">
+                <div class="service-icon">❤️</div>
+                <h3>Life Insurance</h3>
+                <p>Secure your family's future with comprehensive life coverage plans designed to provide financial protection.</p>
+                <span class="learn-more">Learn More →</span>
+            </div>
+
+            <div class="service-card" onclick="showServiceDetail('health')">
+                <div class="service-icon">🏥</div>
+                <h3>Health Insurance</h3>
+                <p>Access quality healthcare with our comprehensive medical coverage for you and your loved ones.</p>
+                <span class="learn-more">Learn More →</span>
+            </div>
+
+            <div class="service-card" onclick="showServiceDetail('property')">
+                <div class="service-icon">🏠</div>
+                <h3>Property Insurance</h3>
+                <p>Protect your home and belongings against unforeseen events with our robust property coverage.</p>
+                <span class="learn-more">Learn More →</span>
+            </div>
+
+            <div class="service-card" onclick="showServiceDetail('motor')">
+                <div class="service-icon">🚗</div>
+                <h3>Motor Insurance</h3>
+                <p>Drive with confidence knowing your vehicle is protected with comprehensive motor insurance.</p>
+                <span class="learn-more">Learn More →</span>
+            </div>
+
+            <div class="service-card" onclick="showServiceDetail('travel')">
+                <div class="service-icon">✈️</div>
+                <h3>Travel Insurance</h3>
+                <p>Travel worry-free with coverage for medical emergencies, trip cancellations, and lost luggage.</p>
+                <span class="learn-more">Learn More →</span>
+            </div>
+
+            <div class="service-card" onclick="showServiceDetail('business')">
+                <div class="service-icon">💼</div>
+                <h3>Business Insurance</h3>
+                <p>Safeguard your business operations with tailored commercial insurance solutions.</p>
+                <span class="learn-more">Learn More →</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Hakikisha Insurance</h2>
+                <p>For over a decade, Hakikisha Insurance has been Kenya's trusted partner in providing comprehensive insurance solutions. We pride ourselves on our commitment to exceptional customer service and innovative coverage options.</p>
+                <p>Our team of experienced professionals works tirelessly to ensure that every client receives personalized attention and the best possible coverage for their unique needs.</p>
+                <p>With 24/7 support and a seamless claims process, we're here whenever you need us.</p>
+            </div>
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">50,000+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Claim Settlement Rate</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Customer Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3 style="color: #003366; margin-bottom: 1.5rem;">Contact Information</h3>
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <div>
+                        <strong>Email</strong><br>
+                        support@hakikishainsurance.co.ke
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div>
+                        <strong>Phone</strong><br>
+                        +254 700 000 000
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <div>
+                        <strong>Address</strong><br>
+                        Nairobi, Kenya
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">⏰</span>
+                    <div>
+                        <strong>Hours</strong><br>
+                        24/7 Customer Support
+                    </div>
+                </div>
+            </div>
+            <div class="contact-info">
+                <h3 style="color: #003366; margin-bottom: 1.5rem;">Quick Support</h3>
+                <p style="margin-bottom: 1rem;">Need immediate assistance? Our chatbot is available 24/7 to help you with:</p>
+                <ul style="margin-left: 1.5rem; color: #666;">
+                    <li>Policy information</li>
+                    <li>Claims submission</li>
+                    <li>Premium quotes</li>
+                    <li>Coverage details</li>
+                    <li>General inquiries</li>
+                </ul>
+                <button class="cta-button" onclick="toggleChat()" style="margin-top: 1rem;">Chat Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <p>&copy; 2025 Hakikisha Insurance. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">Your trusted partner in insurance solutions</p>
+        </div>
+    </footer>
+
+    <!-- Chat Button -->
+    <button id="chat-button" onclick="toggleChat()">💬</button>
+
+    <!-- Chat Popup -->
+    <div id="chat-popup">
+        <div id="chat-header">
+            <h3>Chat with Us</h3>
+            <button id="close-chat" onclick="toggleChat()">×</button>
+        </div>
+        <div id="chat-box">
+            <div class="message bot">
+                <div class="message-label">Hakikisha Assistant</div>
+                <div class="message-content">Hello! Welcome to Hakikisha Insurance. How can I help you today?</div>
+            </div>
+        </div>
+        <div id="loading">Typing...</div>
+        <div id="error">Unable to connect. Please try again.</div>
+        <div id="chat-input-container">
+            <input type="text" id="user-input" placeholder="Type your message..." onkeypress="if(event.key==='Enter') sendMessage()" />
+            <button id="send-button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- Service Detail Modal -->
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // CHATBOT CONFIGURATION
+        // ============================================
+        
+        // IMPORTANT: Update this with your deployed backend URL
+        const BACKEND_URL = 'https://hakikisha-assistant-1.onrender.com/webhook';
+        
+        // Store conversation history
+        let conversationHistory = [];
+        let isProcessing = false;
+
+        // ============================================
+        // CHATBOT FUNCTIONS
+        // ============================================
+
+        // Toggle chat popup open/close
+        function toggleChat() {
+            const chatPopup = document.getElementById('chat-popup');
+            const chatButton = document.getElementById('chat-button');
+            
+            if (chatPopup.classList.contains('active')) {
+                // Close chat
+                chatPopup.classList.remove('active');
+                chatButton.innerHTML = '💬';
+            } else {
+                // Open chat
+                chatPopup.classList.add('active');
+                chatButton.innerHTML = '✕';
+                document.getElementById('user-input').focus();
+            }
+        }
+
+        // Send message to backend
+        async function sendMessage() {
+            if (isProcessing) return;
+            
+            const input = document.getElementById('user-input');
+            const chatBox = document.getElementById('chat-box');
+            const loading = document.getElementById('loading');
+            const error = document.getElementById('error');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            isProcessing = true;
+
+            // Display user message
+            addMessageToChat('user', message);
+
+            // Clear input and disable send button
+            input.value = '';
+            const sendBtn = document.getElementById('send-button');
+            sendBtn.disabled = true;
+            input.disabled = true;
+            
+            // Show loading indicator
+            loading.style.display = 'block';
+            error.style.display = 'none';
+
+            try {
+                // Generate a unique session ID for this user
+                const sessionId = getOrCreateSessionId();
+                
+                // Prepare the request payload for Dialogflow webhook
+                const payload = {
+                    responseId: `frontend-${Date.now()}`,
+                    session: `projects/hakikisha-insurance/agent/sessions/${sessionId}`,
+                    queryResult: {
+                        queryText: message,
+                        intent: {
+                            displayName: "Default Welcome Intent"
+                        },
+                        parameters: {},
+                        allRequiredParamsPresent: true,
+                        languageCode: "en"
+                    },
+                    originalDetectIntentRequest: {
+                        source: "web-chat",
+                        payload: {}
+                    }
+                };
+
+                console.log('Sending to backend:', BACKEND_URL);
+                console.log('Payload:', payload);
+
+                // Send request to your backend
+                const response = await fetch(BACKEND_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                console.log('Response status:', response.status);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log('Response data:', data);
+                
+                // Extract the bot's response
+                let botResponse = data.fulfillmentText || 
+                                 data.fulfillmentMessages?.[0]?.text?.text?.[0] || 
+                                 "I'm sorry, I didn't understand that. Could you please rephrase?";
+
+                // Display bot message
+                addMessageToChat('bot', botResponse);
+
+                // Store in conversation history
+                conversationHistory.push({
+                    user: message,
+                    bot: botResponse,
+                    timestamp: new Date().toISOString()
+                });
+
+            } catch (err) {
+                console.error('Error communicating with backend:', err);
+                error.textContent = 'Connection error. Please check console for details.';
+                error.style.display = 'block';
+                
+                // Display error message in chat
+                addMessageToChat('bot', "I'm having trouble connecting right now. Please try again in a moment or call us at +254 700 000 000.");
+                
+            } finally {
+                // Re-enable input and hide loading
+                loading.style.display = 'none';
+                sendBtn.disabled = false;
+                input.disabled = false;
+                input.focus();
+                isProcessing = false;
+            }
+        }
+
+        // Add message to chat box
+        function addMessageToChat(sender, message) {
+            const chatBox = document.getElementById('chat-box');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${sender}`;
+            
+            const label = sender === 'user' ? 'You' : 'Hakikisha Assistant';
+            
+            msgDiv.innerHTML = `
+                <div class="message-label">${label}</div>
+                <div class="message-content">${escapeHtml(message)}</div>
+            `;
+            
+            chatBox.appendChild(msgDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // Helper function to escape HTML and prevent XSS
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        // Generate or retrieve session ID for user continuity
+        function getOrCreateSessionId() {
+            let sessionId = sessionStorage.getItem('hakikisha_session_id');
+            if (!sessionId) {
+                sessionId = 'user-' + Math.random().toString(36).substr(2, 9) + '-' + Date.now();
+                sessionStorage.setItem('hakikisha_session_id', sessionId);
+            }
+            return sessionId;
+        }
+
+        // ============================================
+        // SERVICE DETAIL MODAL FUNCTIONS
+        // ============================================
+
+        const serviceDetails = {
+            life: {
+                title: "Life Insurance",
+                icon: "❤️",
+                description: "Our life insurance policies provide comprehensive financial protection for your family's future, ensuring they are taken care of in your absence.",
+                features: [
+                    "Term life coverage up to age 85",
+                    "Whole life insurance options",
+                    "Flexible premium payment plans",
+                    "Critical illness riders available",
+                    "Accidental death benefits",
+                    "Tax-efficient savings component"
+                ],
+                benefits: [
+                    "Financial security for your dependents",
+                    "Coverage for funeral expenses",
+                    "Estate planning benefits",
+                    "Peace of mind for your family",
+                    "Loan protection coverage"
+                ],
+                coverage: "Coverage amounts from KES 500,000 to KES 50,000,000"
+            },
+            health: {
+                title: "Health Insurance",
+                icon: "🏥",
+                description: "Access quality healthcare with our comprehensive medical insurance plans covering inpatient, outpatient, and specialized treatments.",
+                features: [
+                    "Inpatient and outpatient coverage",
+                    "Maternity benefits",
+                    "Dental and optical care",
+                    "Chronic disease management",
+                    "Emergency medical evacuation",
+                    "Worldwide coverage options"
+                ],
+                benefits: [
+                    "Access to a wide network of hospitals",
+                    "Cashless treatment at partner facilities",
+                    "Annual health check-ups",
+                    "24/7 medical helpline",
+                    "Prescription medication coverage"
+                ],
+                coverage: "Individual and family plans available with annual limits up to KES 15,000,000"
+            },
+            property: {
+                title: "Property Insurance",
+                icon: "🏠",
+                description: "Protect your home and valuable possessions against fire, theft, natural disasters, and other unforeseen events.",
+                features: [
+                    "Building structure coverage",
+                    "Contents and belongings protection",
+                    "Alternative accommodation costs",
+                    "Public liability coverage",
+                    "Natural disaster protection",
+                    "Malicious damage coverage"
+                ],
+                benefits: [
+                    "Replacement cost coverage",
+                    "24/7 emergency assistance",
+                    "Quick claim settlement",
+                    "Home renovation protection",
+                    "Garden and outdoor coverage"
+                ],
+                coverage: "Coverage based on property value with optional extensions available"
+            },
+            motor: {
+                title: "Motor Insurance",
+                icon: "🚗",
+                description: "Comprehensive vehicle insurance protecting you against accidents, theft, and third-party liabilities on Kenyan roads.",
+                features: [
+                    "Comprehensive coverage",
+                    "Third-party insurance",
+                    "Theft and fire protection",
+                    "Windscreen and window cover",
+                    "Emergency roadside assistance",
+                    "Courtesy car provision"
+                ],
+                benefits: [
+                    "Fast claim processing",
+                    "Nationwide garage network",
+                    "No-claim bonus discounts",
+                    "Personal accident cover",
+                    "Legal liability protection"
+                ],
+                coverage: "All vehicle types covered including private cars, commercial vehicles, and motorcycles"
+            },
+            travel: {
+                title: "Travel Insurance",
+                icon: "✈️",
+                description: "Travel with confidence knowing you're protected against medical emergencies, trip cancellations, and unexpected events abroad.",
+                features: [
+                    "Medical expenses coverage",
+                    "Trip cancellation protection",
+                    "Lost luggage compensation",
+                    "Flight delay benefits",
+                    "Emergency repatriation",
+                    "Travel document replacement"
+                ],
+                benefits: [
+                    "24/7 global assistance",
+                    "Adventure sports coverage",
+                    "Family and group discounts",
+                    "Business travel options",
+                    "Multi-trip annual plans"
+                ],
+                coverage: "Single trip and annual multi-trip plans for worldwide destinations"
+            },
+            business: {
+                title: "Business Insurance",
+                icon: "💼",
+                description: "Comprehensive commercial insurance solutions protecting your business assets, operations, and employees.",
+                features: [
+                    "Business premises coverage",
+                    "Equipment and machinery protection",
+                    "Business interruption insurance",
+                    "Professional indemnity",
+                    "Employer's liability",
+                    "Cyber insurance"
+                ],
+                benefits: [
+                    "Customized coverage plans",
+                    "Risk assessment services",
+                    "Employee welfare programs",
+                    "Legal expense coverage",
+                    "Supply chain protection"
+                ],
+                coverage: "Flexible plans for SMEs to large enterprises across all industries"
+            }
+        };
+
+        function showServiceDetail(service) {
+            const modal = document.getElementById('service-modal');
+            const modalBody = document.getElementById('modal-body');
+            const details = serviceDetails[service];
+
+            modalBody.innerHTML = `
+                <div style="text-align: center; font-size: 4rem; margin-bottom: 1rem;">${details.icon}</div>
+                <h2>${details.title}</h2>
+                <p style="color: #666; font-size: 1.1rem; margin-bottom: 2rem;">${details.description}</p>
+                
+                <h3>Key Features</h3>
+                <ul>
+                    ${details.features.map(f => `<li>${f}</li>`).join('')}
+                </ul>
+                
+                <h3>Benefits</h3>
+                <ul>
+                    ${details.benefits.map(b => `<li>${b}</li>`).join('')}
+                </ul>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+                    <strong style="color: #003366;">Coverage Details:</strong>
+                    <p style="margin-top: 0.5rem; color: #666;">${details.coverage}</p>
+                </div>
+                
+                <button class="cta-button" onclick="toggleChat(); closeModal();" style="margin-top: 2rem; width: 100%;">Get a Quote via Chat</button>
+            `;
+
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('service-modal').classList.remove('active');
+        }
+
+        // ============================================
+        // EVENT LISTENERS
+        // ============================================
+
+        // Close modal when clicking outside
+        document.getElementById('service-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // ESC key closes modal and chat
+            if (e.key === 'Escape') {
+                closeModal();
+                const chatPopup = document.getElementById('chat-popup');
+                if (chatPopup.classList.contains('active')) {
+                    toggleChat();
+                }
+            }
+        });
+
+        // Enter key sends message
+        document.getElementById('user-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !isProcessing) {
+                sendMessage();
+            }
+        });
+
+        // Show welcome message on first chat open
+        let firstChatOpen = true;
+        const originalToggleChat = toggleChat;
+        toggleChat = function() {
+            originalToggleChat();
+            if (firstChatOpen && document.getElementById('chat-popup').classList.contains('active')) {
+                firstChatOpen = false;
+                console.log('Chat opened! Backend URL:', BACKEND_URL);
+                console.log('Session ID:', getOrCreateSessionId());
+            }
+        };
+
+        // Log backend configuration on page load
+        console.log('='.repeat(50));
+        console.log('Hakikisha Insurance Chatbot Configuration');
+        console.log('='.repeat(50));
+        console.log('Backend URL:', BACKEND_URL);
+        console.log('Session ID:', getOrCreateSessionId());
+        console.log('Ready to connect to Dialogflow via backend webhook');
+        console.log('='.repeat(50));
+    </script>
+            
